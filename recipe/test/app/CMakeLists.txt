@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.0)
 
 project(app LANGUAGES CXX)
 
-find_package(yaml-cpp REQUIRED PATHS ${CMAKE_PREFIX_PATH}/lib)
+find_package(yaml-cpp REQUIRED)
 
 add_executable(app main.cpp)
 
-target_link_libraries(app yaml-cpp::yaml-cpp)
+target_link_libraries(app yaml-cpp)
