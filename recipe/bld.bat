@@ -1,5 +1,5 @@
 @REM Configure the build of yaml-cpp4rkt
-cmake -S . -B build ^
+cmake -GNinja -S . -B build ^
     -DCMAKE_BUILD_TYPE=Release ^
     -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
@@ -10,4 +10,4 @@ cmake -S . -B build ^
 
 @REM Build and install yaml-cpp4rkt in %LIBRARY_PREFIX%
 @REM Note: No need for --parallel below, since cmake takes care of the /MP flag for MSVC
-cmake --build build --config Release --target install
+cmake --build build --config Release --target install --parallel

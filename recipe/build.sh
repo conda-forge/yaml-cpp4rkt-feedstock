@@ -9,7 +9,7 @@ JOBS=$((CPU_COUNT*2 - 1))
 echo "Using $JOBS parallel jobs out of $((CPU_COUNT*2)) available to build yaml-cpp4rkt."
 
 # Configure the build of yaml-cpp4rkt
-cmake -S . -B build ${CMAKE_ARGS} \
+cmake -GNinja -S . -B build ${CMAKE_ARGS} \
     -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_SHARED_LIBS=ON \
     -DYAML_BUILD_SHARED_LIBS=ON \
