@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# Avoid errors on the server such as:
-#  - Error: virtual memory exhausted: Cannot allocate memory
-#  - Error: Exit code 137
-# due to many parallel jobs consuming all available memory
+# Avoid memory exhaustion during compilation by limiting number of parallel jobs
 JOBS=$((CPU_COUNT*2 - 1))
 
 echo "Using $JOBS parallel jobs out of $((CPU_COUNT*2)) available to build yaml-cpp4rkt."
