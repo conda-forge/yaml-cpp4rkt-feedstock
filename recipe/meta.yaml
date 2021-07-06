@@ -7,17 +7,15 @@ package:
 source:
   url: https://github.com/reaktoro/yaml-cpp4rkt/archive/v{{ version }}.rkt.tar.gz
   sha256: 05b468624de9ed5b1ad0691f09d5b0d19579fc6547b6ed05573408a74461735c
-  patches:
-    - pkgconfig.patch  # [win]
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
+    - ninja
 
   run_constrained:
     - yaml-cpp ==999999999999  # To avoid conflicts, yaml-cpp4rkt and yaml-cpp cannot coexist in the same conda environment.
@@ -26,6 +24,7 @@ test:
   requires:
     - {{ compiler('cxx') }}
     - cmake
+    - ninja
   files:
     - test/
   commands:
