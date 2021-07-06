@@ -4,4 +4,4 @@
 cd test/app
 cmake -S . -B build -DCMAKE_PREFIX_PATH=$PREFIX
 cmake --build build
-./build/app
+cmake --build build --target execute-app

@@ -10,3 +10,5 @@ link_directories(${CMAKE_PREFIX_PATH}/lib)
 add_executable(app main.cpp)
 
 target_link_libraries(app yaml-cpp)
+
+add_custom_command(execute-app COMMAND $<TARGET_FILE:app>)
