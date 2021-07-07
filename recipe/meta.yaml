@@ -9,16 +9,13 @@ source:
   sha256: 05b468624de9ed5b1ad0691f09d5b0d19579fc6547b6ed05573408a74461735c
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
     - ninja
-
-  run_constrained:
-    - yaml-cpp ==999999999999  # To avoid conflicts, yaml-cpp4rkt and yaml-cpp cannot coexist in the same conda environment.
 
 test:
   requires:
