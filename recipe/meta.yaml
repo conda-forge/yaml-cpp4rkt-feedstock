@@ -17,9 +17,6 @@ requirements:
     - cmake
     - ninja
 
-  run_constrained:
-    - yaml-cpp ==999999999999  # To avoid conflicts, yaml-cpp4rkt and yaml-cpp cannot coexist in the same conda environment.
-
 test:
   requires:
     - {{ compiler('cxx') }}
